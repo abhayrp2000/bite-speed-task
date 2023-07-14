@@ -1,0 +1,37 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Abhay Patel",
+  "license": "ISC",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc -p .",
+    "test": "echo test",
+    "dev": "nodemon src/index.ts",
+    "prisma:generate": "npx prisma generate --schema=./src/models/schema.prisma",
+    "prisma:deploy": "npx prisma migrate dev deploy"
+  },
+  "scriptComments": {
+    "prisma:create:migrations": "npx prisma migrate dev --name ${name} --create-only"
+  },
+  "prisma": {
+    "schema": "./src/models/schema.prisma"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.7.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "moment-timezone": "^0.5.43",
+    "prisma": "^4.7.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.4.2",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  }
+}
